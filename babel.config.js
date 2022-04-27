@@ -3,10 +3,16 @@ module.exports = {
     'module:metro-react-native-babel-preset',
   ],
   plugins: [
+    ['@babel/plugin-transform-react-jsx', {
+      runtime: 'automatic',
+    }],
     ['module-resolver', {
-      cwd: 'babelrc',
-      root: ['./src'],
-      extensions: ['.js', '.ios.js', '.android.js'],
+      root: [
+        './src',
+      ],
+      alias: {
+        src: './src',
+      },
     }],
   ],
 };
